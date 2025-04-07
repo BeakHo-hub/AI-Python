@@ -4,7 +4,6 @@ while True:
     if A == 0:
         print("프로그램을 종료합니다.")
         break
-
     if A == 1:
         dog = r"""
           / \__

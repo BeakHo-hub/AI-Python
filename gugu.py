@@ -1,4 +1,4 @@
-# 사용자로부터 입력을 받는 함수
+ # 사용자로부터 입력을 받는 함수
 def print_multiplication_table():
     # 사용자에게 숫자를 입력받습니다.
     number = int(input("구구단을 출력할 숫자를 입력하세요 (예: 2): "))
