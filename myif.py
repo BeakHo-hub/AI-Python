@@ -6,13 +6,13 @@
 # 잘못 입력하면 잘못 입력했다고 출력
 print("그림 출력 프로그램")
 print("================")
-print("미도리야1")
-print("미도리야2")
-print("미도리야3")
-print("미도리야4")
+print("1")
+print("2")
+print("3")
+print("4")
 print("================")
 A = (input("원하는 미도리야 선택: "))
-if A == '미도리야1':
+if A == '1':
     midoriya = r"""
 
 
@@ -45,7 +45,7 @@ if A == '미도리야1':
     """
     print(midoriya)
 
-if A =='미도리야2':
+if A =='2':
     midoriya2 = r"""
 
 
@@ -72,7 +72,7 @@ if A =='미도리야2':
 
     """
     print(midoriya2)
-if A == '미도리야3':
+if A == '3':
     midoriya3 = r"""
 
 
@@ -99,7 +99,7 @@ if A == '미도리야3':
 
     """
     print(midoriya3)
-if A == '미도리야4':
+if A == '4':
     midoria4 = r"""
 
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -125,5 +125,7 @@ if A == '미도리야4':
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     """
     print(midoriya4)
-if A != '미도리야1' and A != '미도리야2' and A != '미도리야3' and A != '미도리야4':
+if A != '1' and A != '2' and A != '3' and A != '4':
     print("잘못된 정보")
+
+
