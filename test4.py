@@ -10,7 +10,7 @@ name = input("이름을 입력:")
 hello_name(name)
 
 def cal(n1, n2, op):
-    r_0
+    r=0
     if op =="+": #1, 2, 
        r= n1+n2
     elif op =="-":
