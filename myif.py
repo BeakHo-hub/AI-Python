@@ -4,18 +4,23 @@
 # 만약에 2를 입력하면 2번 캐릭터 출력
 # 3을 입력하면 3번 캐릭터 푸렭
 # 잘못 입력하면 잘못 입력했다고 출력
+from rich import print
+from rich.panel import Panel
+from rich.console import Console 
+console = Console()              
 def print_menu():
-    print("그림 출력 프로그램")
-    print("================")
-    print("1")
-    print("2")
-    print("3")
-    print("4")
-    print("0을 입력하면 종료")
-    print("================")
+    console.print("[bold yellow]그림 출력 프로그램[/bold yellow]")
+    console.print("[cyan]================[/cyan]")
+    console.print("1")
+    console.print("2")
+    console.print("3")
+    console.print("4")
+    console.print("[red]0을 입력하면 종료[/red]")
+    console.print("[cyan]================[/cyan]")
 def print_picture(number):
     if number == '1':
         midoriya = r"""
+        [green]
     ⣏⡹⣬⣍⣣⣭⣙⣬⣍⢧⣻⣟⣿⡿⣿⢿⣿⢿⡿⣿⢿⡿⣿⢿⡿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⢢⠑⡦⣌⠱⣌⡙⡚⡔⢪⢿⣾⣽⡿⣽⣻⣿⣿⣿⣽⣯⣿⡽⣯⢿⣽⣻⣽⣻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⠶⣩⠛⡜⣛⠲⠳⡱⢎⡓⢾⣯⢿⣽⢿⣳⢿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -40,12 +45,18 @@ def print_picture(number):
     ⡸⣔⡬⣆⣱⢊⢦⡙⢆⠻⣹⢷⡻⣏⣷⢻⡽⡽⡶⢯⡽⣏⣷⣻⡵⣏⣟⣿⣶⣦⣔⣤⣲⣼⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⡡⡍⡜⡩⢍⡋⢇⡛⢭⠳⣹⠾⣽⡽⣚⣯⢷⣻⡽⢯⣷⢻⡼⣧⢿⣽⣾⣿⣿⣿⣿⣿⣿⣿⣿⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣉⠳⢨⠱⣩⢜⣡⣚⣤⡳⣼⡻⢧⡿⡽⣞⡽⣶⢻⣻⡼⢯⣷⣛⡾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⡄⢻⡳⣏⣏⣽⣯⣽⣉⣾⣍⣹
+    [/green]
         """
-        for i in range(5):
-            print(midoriya)
+        lines = midoriya.splitlines()
+        height = len(lines)
+        width = max(len(line) for line in lines)
+        console.print(Panel(midoriya, title="midoriya", border_style="bold green", width=width+4, height=height+4))
+        
+        
 
     elif number =='2':
         midoriya2 = r"""
+        [blue]
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠈⠹⣶⣤⣬⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣷⣤⣠⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⡻⠛⠳⠆⢠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣻⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣾⣿⣿⣶⣾⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -64,13 +75,17 @@ def print_picture(number):
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣾⢺⣽⡾⣿⡤⢝⡰⣉⠞⡤⢓⠴⡱⣌⠣⡜⢥⣎⢻⡘⢮⡒⣥⣫⢶⣽⣞⢿⡽⣯⣿⣿⣿⣿⣳⡿⣯⠗⠀⠀⠉⠉⢻⡶⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣹⠾⣵⢯⣿⡷⣧⢧⣿⡰⣉⡞⡱⢌⠳⡘⢦⡙⢧⣙⠶⣫⠕⣯⣟⠾⣼⣯⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠈⠃⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡭⣿⣝⣾⣳⢏⡻⣍⣿⠿⣙⢳⣧⣭⢆⡙⢦⡙⢦⢩⠲⣡⢛⡼⣯⣻⣽⣿⣿⣿⣿⣿⣏⢿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⣿⣿⣟⣷⣻⠾⣝⠮⡵⣎⠻⣅⢣⠎⣝⠻⣷⡌⣣⠎⣕⡊⢧⢱⢊⣽⣷⣻⣿⣿⣿⣿⣿⣿⡇⡚⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⣿⣿⣟⣷⣻⠾⣝⠮⡵⣎⠻⣅⢣⠎⣝⠻⣷⡌⣣⠎⣕⡊⢧⢱⢊⣽⣷⣻⣿⣿⣿⣿⣿⣿⡇⡚⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+    [/blue]⠀
         """
-        for i in range(5):
-            print(midoriya2)
+        lines = midoriya2.splitlines()
+        height = len(lines)
+        width = max(len(line) for line in lines)
+        console.print(Panel(midoriya2, title="midoriya2", border_style="bold green", width=width+4, height=height+4))
 
     elif number == '3':
         midoriya3 = r"""
+        [gray]
     ⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⡿⣽⢯⣟⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣽⡿⣽⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣾⣿⣷⣿⣯⣿⢿⡾⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣽⣿⣿⣿⣿⣿⣿⣿
@@ -90,13 +105,16 @@ def print_picture(number):
     ⠀⠌⡐⠠⢈⠐⠠⠐⠬⡴⠛⢋⣉⡤⠴⣈⡿⣼⡽⣟⣛⢫⣍⣒⣌⣣⠵⣬⢳⠼⡒⢥⢃⢞⣦⢯⣹⣿
     ⣶⢦⣄⠁⠂⠌⠠⢁⠂⡑⠞⠛⢛⡙⡈⣷⡻⡝⡩⠍⣍⢣⢌⡱⢌⡡⣋⢔⠣⡜⣹⠶⡋⣿⣿⣿⣮⢻
     ⢍⡻⢞⣷⡌⠠⢁⠂⡐⢬⣹⣶⢿⣿⣇⡾⢱⠘⡔⣩⢶⢋⠦⡑⢎⣖⡳⠪⠙⡉⢁⠂⡁⣟⣦⣟⣨⣵
+    [/gray]
         """
-        for i in range(5):
-            print(midoriya3)
+        lines = midoriya3.splitlines()
+        height = len(lines)
+        width = max(len(line) for line in lines)
+        console.print(Panel(midoriya3, title="midoriya3", border_style="bold green", width=width+4, height=height+4))
 
     elif number == '4':
         midoriya4 = r"""
-
+         [cyan]
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⢿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⣯⡝⡿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣾⣿⣿⣿⣿⡙⣿⣿⣿⣿⣿⡿⣩⢻⣿⣿⣿⣿⣿⣿⣿⣿
@@ -117,9 +135,12 @@ def print_picture(number):
     ⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣷⣿⣿⢣
     ⣽⣏⣿⣿⣾⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣷⣿⢿⡳⢯⡘
     ⡿⣶⣫⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡙⢮⣽⣳⣬
+    [/cyan]
         """
-        for i in range(5):
-            print(midoriya4)
+        lines = midoriya4.splitlines()
+        height = len(lines)
+        width = max(len(line) for line in lines)
+        console.print(Panel(midoriya4, title="midoriya4", border_style="bold green", width=width+4, height=height+4))
     else:
         print("해당 번호에 해당하는 그림이 없습니다 1~4 또는 0을 입력해주세요.")
 
